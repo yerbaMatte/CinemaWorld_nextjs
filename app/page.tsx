@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { basicFetch } from '../api/fetchFunctions';
 import {
   Featured,
@@ -30,7 +29,7 @@ const CarouselProps = {
 export default async function Home() {
   // const { handleToggle, isVisible, setIsVisible, activeMovie } = useModal();
   const featuredMovie: Featured = await getFeaturedMovie();
-  const playingMovies = await nowPlayingMovies();
+  const playingMovies: SelectMovie[] = await nowPlayingMovies();
   console.log(playingMovies);
 
   return (
@@ -48,11 +47,11 @@ export default async function Home() {
         id={featuredMovie.id}
         rating={featuredMovie.rating}
       />
-      <div className='relative pt-10 bg-brand-900 z-30'>
+      <div className="relative pt-10 bg-brand-900 z-30">
         {/* <Carousel
           {...CarouselProps}
-          title='Action Movies'
-          href='/movies/genre/28'
+          title="Action Movies"
+          href="/movies/genre/28"
           hasLink={true}
         >
           {playingMovies.map((playingMovie) => (
@@ -94,13 +93,13 @@ export const nowPlayingMovies = async () => {
 
   const playingMovies = result.map((movie) => ({
     id: movie.id,
-    backdropPath: movie.backdrop_path,
     posterPath: movie.poster_path,
+    backdropPath: movie.backdrop_path,
     title: movie.title,
-    overview: movie.overview,
-    tagline: movie.tagline,
     releaseDate: movie.release_date,
     rating: movie.vote_average,
+    synopsis: movie.overview,
+    genres: movie.genres,
   }));
 
   return playingMovies;
