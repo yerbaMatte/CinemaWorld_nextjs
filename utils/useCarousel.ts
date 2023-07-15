@@ -31,7 +31,6 @@ export function useCarousel({
   children,
   maxVisibleSlides,
   infiniteLoop,
-  title,
   href,
   hasLink,
 }: CarouselProps) {

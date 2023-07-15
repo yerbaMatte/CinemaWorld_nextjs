@@ -12,7 +12,7 @@ const CarouselCard = ({ movie, onClick }: TCardProps) => {
   return (
     <div
       key={movie.id}
-      className="flex flex-col items-center justify-center animate-fadeIn"
+      className="flex flex-col items-center justify-center animate-fadeIn movie hover:hover-movie duration-1000 "
       onClick={onClick}
     >
       <Image
@@ -20,16 +20,12 @@ const CarouselCard = ({ movie, onClick }: TCardProps) => {
         blurDataURL="/images/placeholder.png"
         width={342}
         height={513}
-        src={
-          movie.posterPath
-            ? IMAGE_BASE_URL + THUMB_SIZE + movie.posterPath
-            : '/images/baby-yoda-32.png'
-        }
+        src={IMAGE_BASE_URL + THUMB_SIZE + movie.posterPath}
         alt="movie"
         priority={true}
-        className="rounded-md bg-brand-900 cursor-pointer"
+        className="rounded-md bg-theme-900 cursor-pointer"
       />
-      <div className="text-cyan-300 text-xs py-2 uppercase">
+      <div className="text-theme-300 text-sm py-2 uppercase">
         {truncateString(movie.title, 24)}
       </div>
     </div>

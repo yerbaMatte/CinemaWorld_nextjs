@@ -1,5 +1,4 @@
 import Hero from './Hero/Hero';
-import Carousel from './Carousel';
-import CarouselCard from './Carousel/CarouselCard';
+import Carousel from './Carousel/CarouselComponent';
 
-export { Hero, Carousel, CarouselCard };
+export { Hero, Carousel };

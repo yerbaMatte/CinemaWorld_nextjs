@@ -1,36 +1,17 @@
 import React from 'react';
 import { basicFetch } from '../api/fetchFunctions';
-import {
-  Featured,
-  Movie,
-  SelectMovie,
-  GenreResponse,
-  Movies,
-} from '../types/Movie';
+import { Featured, Movie, SelectMovie } from '../types/Movie';
 import {
   IMAGE_BASE_URL,
   BACKDROP_SIZE,
   movieUrl,
-  genreUrl,
   NOW_PLAYING_MOVIE_IDS,
 } from '../config';
-import { Hero, Carousel, CarouselCard } from '../components';
-import { useModal } from '../utils/useModal';
-
-type HomeProps = {
-  featuredMovie: Featured;
-};
-
-const CarouselProps = {
-  maxVisibleSlides: 7,
-  infiniteLoop: false,
-};
+import { Hero, Carousel } from '../components';
 
 export default async function Home() {
-  // const { handleToggle, isVisible, setIsVisible, activeMovie } = useModal();
   const featuredMovie: Featured = await getFeaturedMovie();
   const playingMovies: SelectMovie[] = await nowPlayingMovies();
-  console.log(playingMovies);
 
   return (
     <>
@@ -48,20 +29,7 @@ export default async function Home() {
         rating={featuredMovie.rating}
       />
       <div className="relative pt-10 bg-brand-900 z-30">
-        {/* <Carousel
-          {...CarouselProps}
-          title="Action Movies"
-          href="/movies/genre/28"
-          hasLink={true}
-        >
-          {playingMovies.map((playingMovie) => (
-            <CarouselCard
-              key={playingMovie.id}
-              movie={playingMovie}
-              onClick={() => handleToggle(playingMovie)}
-            />
-          ))}
-        </Carousel> */}
+        <Carousel data={playingMovies} />
       </div>
     </>
   );
@@ -85,7 +53,7 @@ export const getFeaturedMovie = async () => {
 };
 
 export const nowPlayingMovies = async () => {
-  // Playing movies
+  // Now playing movies
   const fetchPromises = NOW_PLAYING_MOVIE_IDS.map((movie) =>
     basicFetch<Movie>(movieUrl(movie))
   );
