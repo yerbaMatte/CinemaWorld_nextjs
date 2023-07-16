@@ -60,7 +60,7 @@ const Hero = ({
                   {rating.toFixed(2)}
                 </div>
                 <Link href={`/movies/${id}`}>
-                  <button className="border rounded text-theme-400 border-theme-300 py-2 px-5 hover:text-theme-300 hover:neon-shadow duration-200">
+                  <button className="border rounded text-theme-400 border-theme-300 py-2 px-5 hover:neon-shadow duration-200">
                     See Details
                   </button>
                 </Link>

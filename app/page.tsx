@@ -7,7 +7,8 @@ import {
   movieUrl,
   NOW_PLAYING_MOVIE_IDS,
 } from '../config';
-import { Hero, Carousel } from '../components';
+import { Hero } from '../components';
+import Carousel from '@/components/Carousel/Carousel';
 
 export default async function Home() {
   const featuredMovie: Featured = await getFeaturedMovie();
@@ -16,11 +17,7 @@ export default async function Home() {
   return (
     <>
       <Hero
-        imgUrl={
-          featuredMovie.backdropPath
-            ? IMAGE_BASE_URL + BACKDROP_SIZE + featuredMovie.backdropPath
-            : '/images/baby-yoda-32.png'
-        }
+        imgUrl={IMAGE_BASE_URL + BACKDROP_SIZE + featuredMovie.backdropPath}
         title={featuredMovie.title}
         text={featuredMovie.overview}
         tagline={featuredMovie.tagline}
@@ -28,9 +25,7 @@ export default async function Home() {
         id={featuredMovie.id}
         rating={featuredMovie.rating}
       />
-      <div className="relative pt-10 bg-brand-900 z-30">
-        <Carousel data={playingMovies} />
-      </div>
+      <Carousel movies={playingMovies} />
     </>
   );
 }

@@ -31,8 +31,6 @@ export function useCarousel({
   children,
   maxVisibleSlides,
   infiniteLoop,
-  href,
-  hasLink,
 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(
     infiniteLoop ? maxVisibleSlides : 0
