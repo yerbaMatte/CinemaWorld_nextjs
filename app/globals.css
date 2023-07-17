@@ -45,8 +45,8 @@
       0 0 15vmin hsl(194 100% 40%);
   }
   .neon-shadow {
-    box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 10px #fff, 0 0 16px #fff,
-      0 0 18px #fff;
+    box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 8px #fff,
+      0 0 9px #fff;
   }
 
   /* Special FX */

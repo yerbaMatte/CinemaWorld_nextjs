@@ -9,9 +9,8 @@ export const basicFetch = async <returnType>(
     const error = await response.json();
     throw { message: error.message, status: error.code };
   }
-  const data = await response.json();
 
-  return data;
+  return response.json();
 };
 
 export const searchMovies = async (search = '', page = 1): Promise<Movies> => {

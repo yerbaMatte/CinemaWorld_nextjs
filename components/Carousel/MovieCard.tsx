@@ -1,7 +1,7 @@
 import Image from 'next/legacy/image';
 import Link from 'next/link';
-import { IMAGE_BASE_URL, THUMB_SIZE } from '../../config';
-import { truncateString } from '../../utils/helpers';
+import { IMAGE_BASE_URL, THUMB_SIZE } from '@/config';
+import { truncateString } from '@/utils/helpers';
 import { SelectMovie } from '@/types/Movie';
 
 export const MovieCard = ({ movie }: { movie: SelectMovie }) => {

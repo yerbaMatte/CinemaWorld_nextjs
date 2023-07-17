@@ -1,14 +1,13 @@
 import React from 'react';
 import { basicFetch } from '../api/fetchFunctions';
-import { Featured, Movie, SelectMovie } from '../types/Movie';
+import { Featured, Movie, SelectMovie } from '@/types/Movie';
 import {
   IMAGE_BASE_URL,
   BACKDROP_SIZE,
   movieUrl,
   NOW_PLAYING_MOVIE_IDS,
-} from '../config';
-import { Hero } from '../components';
-import Carousel from '@/components/Carousel/Carousel';
+} from '@/config';
+import { Hero, Carousel } from '@/components';
 
 export default async function Home() {
   const featuredMovie: Featured = await getFeaturedMovie();
