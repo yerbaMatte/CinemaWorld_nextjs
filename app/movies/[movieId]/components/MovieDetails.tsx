@@ -1,26 +1,28 @@
 import React from 'react';
 import Image from 'next/legacy/image';
-import {
-  movieUrl,
-  creditsUrl,
-  IMAGE_BASE_URL,
-  BACKDROP_SIZE,
-  POSTER_SIZE,
-} from '@/config';
-import { calcTime } from '@/utils/helpers';
+import { IMAGE_BASE_URL, BACKDROP_SIZE } from '@/config';
+import { calcTime, convertMoney } from '@/utils/helpers';
 
-const MovieDetails = ({ movie, cast }) => {
+const MovieDetails = async ({ movie, cast }) => {
   const {
     backdrop_path: backgroundImgUrl,
     tagline,
     title,
-    year,
+    budget,
+    revenue,
     genres,
     overview: summary,
     release_date: time,
     runtime,
     vote_average: rating,
   } = movie;
+
+  console.log(movie);
+
+  const directorsData = await cast;
+  const directors = directorsData.crew.filter(
+    (person) => person.job === 'Director'
+  );
 
   return (
     <div className='relative animate-fadeIn'>
@@ -43,23 +45,23 @@ const MovieDetails = ({ movie, cast }) => {
 
       <div className='relative w-full pt-80 pb-64 px-4 md:px-8'>
         {tagline && (
-          <span className='text-white md:text-2xl md:max-w-[70%] xl:text-3xl italic text-shadow-md'>
+          <span className='text-2xl md:text-3xl xl:text-5xl italic text-shadow-md text-white my-1 block font-thin'>
             &quot;{tagline}&quot;
           </span>
         )}
 
-        <h2 className='text-cyan-400 text-4xl md:text-5xl md:max-w-[70%] xl:text-6xl font-bold text-shadow-md uppercase tracking-wide my-3'>
+        <h2 className='text-theme-400 text-4xl md:text-5xl md:max-w-[70%] xl:text-6xl font-bold text-shadow-md uppercase tracking-wide my-3'>
           {title}
         </h2>
 
-        <div className='text-gray-300 mt-2 text-sm'>
+        <div className='text-gray-300 text-sm p-1'>
           <span>
             {!time ? 'No Release Data' : `${time}`}{' '}
-            <span className='text-cyan-500 font-extrabold text-lg'>|</span>{' '}
+            <span className='text-theme-500 text-lg'>|</span>{' '}
           </span>
           <span>
             {calcTime(runtime)}
-            <span className='text-cyan-500 font-extrabold text-lg'>|</span>{' '}
+            <span className='text-theme-500 text-lg'>|</span>{' '}
           </span>
           {genres?.map((genre, index) => {
             const isEndofArray = index === genres.length - 1;
@@ -73,30 +75,39 @@ const MovieDetails = ({ movie, cast }) => {
           })}
         </div>
 
-        <div className='text-cyan-400 text-3xl md:text-4xl xl:text-5xl font-bold text-shadow-md uppercase tracking-wide my-3'>
+        <div className='text-white text-3xl md:text-4xl xl:text-5xl font-bold text-shadow-md uppercase tracking-wide my-3'>
           ✪ {!rating ? '0/10' : `${rating.toFixed(2)}`}
         </div>
 
         <div className='w-full text-sm md:max-w-[70%] text-gray-200 text-shadow-md mt-6'>
-          {summary}
+          <h3 className='text-theme-400 text-md font-bold'>Overview</h3>
+          <span className='text-gray-200 italic text-sm'>{summary}</span>
         </div>
 
-        <div>
-          <h3 className='text-cyan-400 mt-6 text-xl font-bold'>
+        <div className='w-full text-sm md:max-w-[70%] text-gray-200 text-shadow-md mt-6'>
+          <h3 className='text-theme-400 text-md font-bold'>
             Director
-            {/* {directors.length > 1 ? 's' : ''} */}
+            {directors.length > 1 ? 's' : ''}:{` `}
           </h3>
-          <div>
-            {/* {directors.map((director) => (
-                <p className='text-gray-200' key={director.credit_id}>
-                  {director.name}
-                </p>
-              ))} */}
-          </div>
+          <span>
+            {directors.map((director) => (
+              <span
+                className='text-gray-200 italic text-sm'
+                key={director.credit_id}
+              >
+                {director.name}
+                {` `}
+              </span>
+            ))}
+          </span>
         </div>
-        <div className='mt-6 flex gap-2'>
-          <span>Budget</span>
-          <span>Revenue</span>
+        <div className='mt-6 flex gap-2 '>
+          <div className='flex items-center gap-2 border font-bold rounded bg-theme-400 text-black border-theme-300 py-2 px-4 text-sm'>
+            Budget | {convertMoney(budget)}
+          </div>
+          <div className='flex items-center gap-2 border font-bold rounded bg-theme-400 text-black border-theme-300 py-2 px-4 text-sm'>
+            Revenue | {convertMoney(revenue)}
+          </div>
         </div>
       </div>
     </div>

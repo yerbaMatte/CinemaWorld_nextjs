@@ -5,6 +5,7 @@ import { basicFetch } from '@/api/fetchFunctions';
 import { movieUrl, creditsUrl } from '@/config';
 import { Credits } from '@/types/Movie';
 import { Suspense } from 'react';
+import GoBackButton from './components/GoBackButton';
 
 export default async function Page({
   params: { movieId },
@@ -23,6 +24,7 @@ export default async function Page({
       <Suspense fallback={<h1>Loading ...</h1>}>
         <CastGrid promise={creditPromise} />
       </Suspense>
+      <GoBackButton />
     </>
   );
 }

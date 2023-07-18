@@ -68,10 +68,10 @@ const Hero = ({
               <p className='w-full text-gray-200 text-shadow-lg'>
                 {truncateString(text, 131)}{' '}
                 <Link
-                  href='#'
+                  href={`/movies/${id}`}
                   className='text-theme-600 underline hover:text-white'
                 >
-                  see more
+                  read more
                 </Link>
               </p>
             </div>
