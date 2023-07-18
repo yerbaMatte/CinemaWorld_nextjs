@@ -4,8 +4,8 @@ import React from 'react';
 function GoBackButton() {
   return (
     <Link href='/' className='animate-fadeIn'>
-      <div className='fixed top-0 left-0 bg-theme-600 pr-6 pb-2 rounded-br-3xl opacity-50 hover:opacity-90 duration-500'>
-        <div className='flex pl-1 pt-1 text-black font-semibold justify-center items-center'>
+      <div className='fixed bottom-0 left-0 bg-theme-600 pr-2 rounded-tr-3xl opacity-50 hover:opacity-90 duration-500'>
+        <div className='flex pl-1 py-2 text-black font-semibold justify-center items-center'>
           <span className='font-medium p-2'>MAIN PAGE</span>
           <svg
             xmlns='http://www.w3.org/2000/svg'

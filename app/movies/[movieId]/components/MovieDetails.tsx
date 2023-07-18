@@ -31,9 +31,10 @@ const MovieDetails = async ({ movie, cast }: MovieDetailsProps) => {
   return (
     <div className='relative animate-fadeIn'>
       {/* Overlay */}
-      <div className='absolute top-0 inset-0 bg-brand-900 bg-opacity-40' />
+      <div className='absolute top-0 inset-0 bg-brand-900 bg-opacity-100' />
       <div className='absolute top-0 inset-0 bg-gradient-to-r from-[#010404] via-transparent to-transparent' />
       <div className='absolute inset-0 bg-gradient-to-t from-[#010404] via-transparent to-transparent' />
+      <div className='absolute inset-0 bg-gradient-to-b from-[#010404] via-transparent to-transparent' />
 
       <Image
         priority={true}

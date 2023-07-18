@@ -1,6 +1,5 @@
 import Image from 'next/legacy/image';
 import Link from 'next/link';
-// Helpers
 import { truncateString } from '@/utils/helpers';
 import { RiStarFill } from 'react-icons/ri';
 
@@ -34,10 +33,11 @@ const Hero = ({
         alt={title}
         className='absolute inset-0 w-full h-full object-cover -z-10 animate-fadeIn'
         placeholder='blur'
-        blurDataURL='/images/placeholder.png'
+        blurDataURL='/public/images/placeholder.png'
       />
 
       <div className='absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent' />
+      <div className='absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent' />
       <div className='absolute overflow-hidden inset-0 m-0 p-0 w-full h-full bg-gradient-to-r from-[#010404] via-transparent to-transparent' />
       <div className='relative'>
         <div className='px-4 pt-96 pb-56 mx-auto md:px-6 lg:px-8'>
