@@ -3,7 +3,7 @@ import MovieDetails from './components/MovieDetails';
 import CastGrid from './components/CastGrid';
 import { basicFetch } from '@/api/fetchFunctions';
 import { movieUrl, creditsUrl } from '@/config';
-import { Credits } from '@/types/Movie';
+import { Credits, Movie } from '@/types/Movie';
 import { Suspense } from 'react';
 import GoBackButton from './components/GoBackButton';
 
@@ -13,7 +13,8 @@ export default async function Page({
   params: { movieId: string };
 }) {
   const movieEndpoint: string = movieUrl(movieId);
-  const movieData = await basicFetch(movieEndpoint);
+  const movieData: Movie = await basicFetch(movieEndpoint);
+  console.log(movieData);
 
   const castEndpoint: string = creditsUrl(movieId);
   const creditPromise: Promise<Credits> = basicFetch(castEndpoint);

@@ -2,22 +2,26 @@ import React from 'react';
 import Image from 'next/legacy/image';
 import { IMAGE_BASE_URL, BACKDROP_SIZE } from '@/config';
 import { calcTime, convertMoney } from '@/utils/helpers';
+import { Movie, Credits } from '@/types/Movie';
 
-const MovieDetails = async ({ movie, cast }) => {
+type MovieDetailsProps = {
+  movie: Movie;
+  cast: Promise<Credits>;
+};
+
+const MovieDetails = async ({ movie, cast }: MovieDetailsProps) => {
   const {
-    backdrop_path: backgroundImgUrl,
+    backdrop_path,
+    budget,
+    genres,
+    overview,
+    release_date,
+    revenue,
+    runtime,
     tagline,
     title,
-    budget,
-    revenue,
-    genres,
-    overview: summary,
-    release_date: time,
-    runtime,
-    vote_average: rating,
+    vote_average,
   } = movie;
-
-  console.log(movie);
 
   const directorsData = await cast;
   const directors = directorsData.crew.filter(
@@ -38,7 +42,7 @@ const MovieDetails = async ({ movie, cast }) => {
         objectFit='cover'
         objectPosition='center'
         layout='fill'
-        src={IMAGE_BASE_URL + BACKDROP_SIZE + backgroundImgUrl}
+        src={IMAGE_BASE_URL + BACKDROP_SIZE + backdrop_path}
         alt='movie poster background'
         className='absolute inset-0 w-full h-full object-cover -z-10'
       />
@@ -56,7 +60,7 @@ const MovieDetails = async ({ movie, cast }) => {
 
         <div className='text-gray-300 text-sm p-1'>
           <span>
-            {!time ? 'No Release Data' : `${time}`}{' '}
+            {!release_date ? 'No Release Data' : `${release_date}`}{' '}
             <span className='text-theme-500 text-lg'>|</span>{' '}
           </span>
           <span>
@@ -76,12 +80,12 @@ const MovieDetails = async ({ movie, cast }) => {
         </div>
 
         <div className='text-white text-3xl md:text-4xl xl:text-5xl font-bold text-shadow-md uppercase tracking-wide my-3'>
-          ✪ {!rating ? '0/10' : `${rating.toFixed(2)}`}
+          ✪ {!vote_average ? '0/10' : `${vote_average.toFixed(2)}`}
         </div>
 
         <div className='w-full text-sm md:max-w-[70%] text-gray-200 text-shadow-md mt-6'>
           <h3 className='text-theme-400 text-md font-bold'>Overview</h3>
-          <span className='text-gray-200 italic text-sm'>{summary}</span>
+          <span className='text-gray-200 italic text-sm'>{overview}</span>
         </div>
 
         <div className='w-full text-sm md:max-w-[70%] text-gray-200 text-shadow-md mt-6'>

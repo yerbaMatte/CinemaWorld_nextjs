@@ -3,7 +3,7 @@ import React from 'react';
 
 function GoBackButton() {
   return (
-    <Link href='/'>
+    <Link href='/' className='animate-fadeIn'>
       <div className='fixed top-0 left-0 bg-theme-600 pr-6 pb-2 rounded-br-3xl opacity-50 hover:opacity-90 duration-500'>
         <div className='flex pl-1 pt-1 text-black font-semibold justify-center items-center'>
           <span className='font-medium p-2'>MAIN PAGE</span>

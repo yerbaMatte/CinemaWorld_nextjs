@@ -37,10 +37,8 @@ const Hero = ({
         blurDataURL='/images/placeholder.png'
       />
 
-      {/* Overlay */}
       <div className='absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent' />
       <div className='absolute overflow-hidden inset-0 m-0 p-0 w-full h-full bg-gradient-to-r from-[#010404] via-transparent to-transparent' />
-
       <div className='relative'>
         <div className='px-4 pt-96 pb-56 mx-auto md:px-6 lg:px-8'>
           <div className='flex items-center justify-between md:flex-row'>
