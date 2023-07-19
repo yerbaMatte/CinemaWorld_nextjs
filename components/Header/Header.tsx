@@ -59,6 +59,14 @@ const Header = () => {
                 About Us
               </Link>
             </li>
+            <li>
+              <Link
+                className='px-4 py-2 font-semibold text-theme-600 rounded hover:text-theme-300 hover:underline'
+                href='/login'
+              >
+                Login
+              </Link>
+            </li>
           </ul>
           <div className='inline-flex md:hidden'>
             <button className='flex-none px-2 '>

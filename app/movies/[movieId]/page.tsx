@@ -1,11 +1,8 @@
-import React from 'react';
-import MovieDetails from './components/MovieDetails';
-import CastGrid from './components/CastGrid';
+import React, { Suspense } from 'react';
 import { basicFetch } from '@/api/fetchFunctions';
 import { movieUrl, creditsUrl } from '@/config';
 import { Credits, Movie } from '@/types/Movie';
-import { Suspense } from 'react';
-import GoBackButton from './components/GoBackButton';
+import { MovieDetails, CastGrid, GoBackButton } from './components';
 
 export default async function Page({
   params: { movieId },

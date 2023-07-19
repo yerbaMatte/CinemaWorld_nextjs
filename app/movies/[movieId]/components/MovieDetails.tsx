@@ -50,12 +50,12 @@ const MovieDetails = async ({ movie, cast }: MovieDetailsProps) => {
 
       <div className='relative w-full pt-80 pb-64 px-4 md:px-8'>
         {tagline && (
-          <span className='text-2xl md:text-3xl xl:text-5xl italic text-shadow-md text-white my-1 block font-thin'>
+          <span className='text-xl md:text-2xl xl:text-4xl italic text-shadow-md text-white my-1 block font-thin w-3/5'>
             &quot;{tagline}&quot;
           </span>
         )}
 
-        <h2 className='text-theme-400 text-4xl md:text-5xl md:max-w-[70%] xl:text-6xl font-bold text-shadow-md uppercase tracking-wide my-3'>
+        <h2 className='text-theme-400 text-5xl md:text-6xl md:max-w-[80%] xl:text-7xl font-bold text-shadow-md uppercase tracking-wide my-3'>
           {title}
         </h2>
 

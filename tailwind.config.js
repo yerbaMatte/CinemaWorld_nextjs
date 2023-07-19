@@ -10,6 +10,9 @@ module.exports = {
       'auto-fill': 'repeat(auto-fill, minmax(200px, 1fr))',
     },
     extend: {
+      spacing: {
+        120: '30rem',
+      },
       height: {
         128: '40rem',
       },

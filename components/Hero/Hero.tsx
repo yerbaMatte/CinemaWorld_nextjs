@@ -40,13 +40,13 @@ const Hero = ({
       <div className='absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent' />
       <div className='absolute overflow-hidden inset-0 m-0 p-0 w-full h-full bg-gradient-to-r from-[#010404] via-transparent to-transparent' />
       <div className='relative'>
-        <div className='px-4 pt-96 pb-56 mx-auto md:px-6 lg:px-8'>
+        <div className='px-4 pt-120 pb-56 mx-auto md:px-6 lg:px-8'>
           <div className='flex items-center justify-between md:flex-row'>
             <div className='w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12'>
               <span className='text-2xl md:text-3xl xl:text-5xl italic text-shadow-md text-white my-1 block font-thin'>
                 &quot;{tagline}&quot;
               </span>
-              <h1 className='max-w-lg text-2xl md:text-3xl lg:text-4xl font-bold text-theme-400 text-shadow-md'>
+              <h1 className='max-w-lg text-3xl md:text-4xl lg:text-5xl font-bold text-theme-400 text-shadow-md'>
                 {title}
               </h1>
               <p className='text-gray-400 mt-2 text-sm'>

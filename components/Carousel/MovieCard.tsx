@@ -6,7 +6,7 @@ import { SelectMovie } from '@/types/Movie';
 
 export const MovieCard = ({ movie }: { movie: SelectMovie }) => {
   return (
-    <Link href=''>
+    <Link href={`/movies/${movie.id}`}>
       <div
         key={movie.id}
         className='flex flex-col items-center justify-center animate-fadeIn movie hover:hover-movie duration-1000 2xl:w-64 xl:w-60 lg:w-52 md:w-44 sm:w-32 w-32'
@@ -21,7 +21,7 @@ export const MovieCard = ({ movie }: { movie: SelectMovie }) => {
           priority={true}
           className='rounded-md bg-theme-900 cursor-pointer'
         />
-        <div className='text-theme-300 text-lg py-2 uppercase text-center'>
+        <div className='text-theme-300 text-sm py-2 uppercase text-center'>
           {truncateString(movie.title, 24)}
         </div>
       </div>
