@@ -58,7 +58,7 @@ const ScrollAreaProvider = ({ children }: { children: JSX.Element }) => {
 
 function Carousel({ movies }: { movies: SelectMovie[] }) {
   return (
-    <div className='relative pt-10 bg-brand-900 z-30'>
+    <div className='relative pt-10 z-30'>
       <h2 className='md:text-xl lg:text-2xl font-semibold text-theme-400 text-shadow-md pl-5'>
         NOW WE ARE PLAYING
       </h2>

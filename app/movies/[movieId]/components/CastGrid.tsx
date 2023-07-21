@@ -1,6 +1,5 @@
 import React from 'react';
 import { Credits } from '@/types/Movie';
-import Link from 'next/link';
 import Image from 'next/image';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '@/config';
 
@@ -21,18 +20,16 @@ async function CastGrid({ promise }: { promise: Promise<Credits> }) {
               key={indx}
               className='rounded cursor-pointer opacity-50 hover:neon-shadow hover:scale-105 hover:opacity-100 duration-500'
             >
-              <Link href='#'>
-                <Image
-                  placeholder='blur'
-                  blurDataURL='/images/placeholder.png'
-                  width={375}
-                  height={563}
-                  className='rounded'
-                  src={IMAGE_BASE_URL + POSTER_SIZE + profile_path}
-                  alt='thumbnail'
-                  priority={true}
-                />
-              </Link>
+              <Image
+                placeholder='blur'
+                blurDataURL='/images/placeholder.png'
+                width={375}
+                height={563}
+                className='rounded'
+                src={IMAGE_BASE_URL + POSTER_SIZE + profile_path}
+                alt='thumbnail'
+                priority={true}
+              />
 
               <h1 className='text-theme-400 font-bold text-center text-md truncate text-shadow-md'>
                 {name}

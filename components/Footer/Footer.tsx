@@ -5,7 +5,7 @@ import tmdb from '../../public/images/tmdb.svg';
 
 function Footer() {
   return (
-    <div className='flex justify-between items-center text-theme-500 font-bold m-6 mb-3 bg-brand-900'>
+    <div className='flex justify-between items-center text-theme-500 font-bold p-6 pb-3 bg-theme-900 mt-auto'>
       <a
         className='flex font-semibold'
         href='https://github.com/yerbaMatte'

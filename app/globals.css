@@ -4,10 +4,8 @@
 
 @layer base {
   body {
-    @apply bg-theme-900;
-  }
-  span {
-    color: theme('colors-theme-800');
+    @apply bg-theme-900 flex flex-col;
+    min-height: 100vh;
   }
 }
 
