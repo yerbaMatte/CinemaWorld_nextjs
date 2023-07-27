@@ -110,4 +110,10 @@
   .scroll-button:hover {
     @apply opacity-100 duration-1000;
   }
+
+  /* NOW PLAYING */
+
+  .background-opacity {
+    background: rgba(0, 0, 0, 0.3);
+  }
 }

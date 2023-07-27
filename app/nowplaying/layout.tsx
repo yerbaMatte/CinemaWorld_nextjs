@@ -9,7 +9,7 @@ async function NowPlayingLayout({ children }: { children: React.ReactNode }) {
   const path = x.backdrop_path;
 
   return (
-    <section className='relative h-96'>
+    <section className='relative h-screen'>
       <Image
         priority={true}
         objectFit='cover'
@@ -25,7 +25,7 @@ async function NowPlayingLayout({ children }: { children: React.ReactNode }) {
       <div className='absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent' />
       <div className='absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent' />
       <main className='w-full md:w-11/12 my-0 mx-auto p-4 py-8 z-9 relative'>
-        <h2 className='md:text-xl lg:text-2xl font-semibold text-theme-400 text-shadow-md pl-5"'>
+        <h2 className='md:text-xl lg:text-2xl font-semibold text-theme-400 text-shadow-md py-4 pl-5"'>
           Now we are playing
         </h2>
         <div className='text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700'>
