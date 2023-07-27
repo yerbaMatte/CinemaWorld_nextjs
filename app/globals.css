@@ -114,6 +114,10 @@
   /* NOW PLAYING */
 
   .background-opacity {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .dayListItem {
+    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 duration-500;
   }
 }
