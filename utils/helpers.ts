@@ -25,7 +25,7 @@ export const truncateString = (text: string, characterLength: number) => {
 };
 
 // List of days
-export const schedule = () => {
+export const navigationDays = () => {
   const currentDate = new Date();
   const currentDay = currentDate.getDay();
 

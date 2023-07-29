@@ -1,21 +1,54 @@
 import React from 'react';
 import MovieCard from '../components/MovieCard';
-import { schedule } from '@/utils/helpers';
+import { navigationDays } from '@/utils/helpers';
+import { moviesSchedule } from '@/api/moviesSchedule';
+import { basicFetch } from '@/api/fetchFunctions';
+import { PlayingMovie } from '@/types/Movie';
+import { movieUrl } from '@/config';
 
-function DayListPage({ params: { dayId } }: { params: { dayId: string } }) {
-  const { mapOfDays } = schedule();
-
-  console.log(mapOfDays.values());
+async function DayListPage({
+  params: { dayId },
+}: {
+  params: { dayId: string };
+}) {
+  const { mapOfDays } = navigationDays();
 
   if (![...mapOfDays.values()].includes(dayId)) {
     throw new Error('There is no such a resource to display');
   }
 
+  const playingMovies = await dayPlayingMovies(dayId);
+  console.log(playingMovies);
   return (
     <>
-      <MovieCard />
+      {playingMovies.map((movie) => (
+        <MovieCard details={movie} key={movie.id} />
+      ))}
     </>
   );
 }
 
 export default DayListPage;
+
+export const dayPlayingMovies = async (dayId: string) => {
+  // get a list of playing movies at specific day
+  const listOfMovies = moviesSchedule[dayId];
+  // fetch movies
+  const fetchPromises = Object.keys(listOfMovies).map((movie) =>
+    basicFetch<PlayingMovie>(movieUrl(movie))
+  );
+  const result = await Promise.all(fetchPromises);
+  console.log(result);
+
+  const playingMovies = result.map((movie) => ({
+    id: movie.id,
+    posterPath: movie.poster_path,
+    genres: movie.genres,
+    title: movie.title,
+    synopsis: movie.overview,
+    duration: movie.runtime,
+    start: listOfMovies[movie.id]['start'],
+  }));
+
+  return playingMovies;
+};

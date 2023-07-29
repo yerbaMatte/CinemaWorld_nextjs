@@ -47,6 +47,10 @@ export type Movie = {
   vote_count: number;
 };
 
+export type PlayingMovie = Movie & {
+  start: string;
+};
+
 export type Credits = {
   id: number;
   cast: Cast[];
@@ -85,4 +89,8 @@ export type Featured = {
   title: string;
   releaseDate: string;
   rating: number;
+};
+
+export type MovieSchedule = {
+  [day: string]: { [movieId: number]: { start: string } };
 };

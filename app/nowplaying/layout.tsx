@@ -11,7 +11,7 @@ async function NowPlayingLayout({ children }: { children: React.ReactNode }) {
   const path = x.backdrop_path;
 
   return (
-    <section className="relative h-screen">
+    <section className="relative">
       <Image
         priority={true}
         objectFit="cover"

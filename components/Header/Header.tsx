@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { schedule } from '@/utils/helpers';
+import { navigationDays } from '@/utils/helpers';
 
 const Header = () => {
-  const { currentDayName } = schedule();
+  const { currentDayName } = navigationDays();
 
   console.log(currentDayName);
 
