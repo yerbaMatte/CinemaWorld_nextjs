@@ -23,3 +23,6 @@ export const truncateString = (text: string, characterLength: number) => {
     return text;
   }
 };
+
+// List of days
+export const listOfDays = {};
