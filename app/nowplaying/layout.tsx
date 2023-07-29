@@ -3,7 +3,6 @@ import Image from 'next/legacy/image';
 import { IMAGE_BASE_URL, BACKDROP_SIZE, movieUrl } from '@/config';
 import { basicFetch } from '@/api/fetchFunctions';
 import { Movie } from '@/types/Movie';
-import Link from 'next/link';
 import DaysNavigation from './components/DaysNavigation';
 
 async function NowPlayingLayout({ children }: { children: React.ReactNode }) {
@@ -12,21 +11,21 @@ async function NowPlayingLayout({ children }: { children: React.ReactNode }) {
   const path = x.backdrop_path;
 
   return (
-    <section className='relative h-screen'>
+    <section className="relative h-screen">
       <Image
         priority={true}
-        objectFit='cover'
-        objectPosition='center'
-        layout='fill'
+        objectFit="cover"
+        objectPosition="center"
+        layout="fill"
         src={IMAGE_BASE_URL + BACKDROP_SIZE + path}
         alt={'star wars'}
-        className='absolute inset-0 w-full h-full object-cover -z-10 animate-fadeIn'
-        placeholder='blur'
-        blurDataURL='/public/images/placeholder.png'
+        className="absolute inset-0 w-full h-full object-cover -z-10 animate-fadeIn"
+        placeholder="blur"
+        blurDataURL="/public/images/placeholder.png"
       />
-      <div className='absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent' />
-      <div className='absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent' />
-      <main className='w-full md:w-11/12 my-0 mx-auto p-4 py-8 z-9 relative'>
+      <div className="absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent" />
+      <div className="absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent" />
+      <main className="w-full md:w-11/12 my-0 mx-auto p-4 py-8 z-9 relative">
         <h2 className='md:text-xl lg:text-2xl font-semibold text-theme-400 text-shadow-md py-4 pl-5"'>
           Now we are playing
         </h2>
