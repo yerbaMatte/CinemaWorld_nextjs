@@ -113,8 +113,8 @@
 
   /* NOW PLAYING */
 
-  .background-opacity {
-    background: rgba(0, 0, 0, 0.5);
+  .background-movie-card {
+    background: rgba(0, 0, 0, 0.6);
   }
 
   .dayListItem {
@@ -124,5 +124,15 @@
   .active {
     border-bottom: 1px white solid;
     color: white;
+  }
+
+  .minimum {
+    min-height: 100rem;
+  }
+
+  /* LOGIN */
+
+  .background-login-card {
+    background: rgba(0, 0, 0, 0.7);
   }
 }

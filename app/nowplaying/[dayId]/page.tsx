@@ -18,7 +18,7 @@ async function DayListPage({
   }
 
   const playingMovies = await dayPlayingMovies(dayId);
-  console.log(playingMovies);
+
   return (
     <>
       {playingMovies.map((movie) => (
@@ -38,7 +38,6 @@ export const dayPlayingMovies = async (dayId: string) => {
     basicFetch<PlayingMovie>(movieUrl(movie))
   );
   const result = await Promise.all(fetchPromises);
-  console.log(result);
 
   const playingMovies = result.map((movie) => ({
     id: movie.id,
@@ -47,6 +46,7 @@ export const dayPlayingMovies = async (dayId: string) => {
     title: movie.title,
     synopsis: movie.overview,
     duration: movie.runtime,
+    rating: movie.vote_average,
     start: listOfMovies[movie.id]['start'],
   }));
 

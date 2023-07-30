@@ -36,7 +36,7 @@ export const navigationDays = () => {
     '4': 'thu',
     '5': 'fri',
     '6': 'sat',
-    '7': 'sun',
+    '0': 'sun',
   };
 
   const mapOfDays = new Map(

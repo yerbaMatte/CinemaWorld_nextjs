@@ -78,7 +78,7 @@ function DaysNavigation() {
         <li className="mr-2">
           <Link
             href="/nowplaying/sun"
-            className={`dayListItem ${selectedDay === 7 && 'active'}`}
+            className={`dayListItem ${selectedDay === 0 && 'active'}`}
             onClick={() => handleDayClick(7)}
           >
             Sunday

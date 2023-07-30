@@ -4,8 +4,6 @@ import { navigationDays } from '@/utils/helpers';
 const Header = () => {
   const { currentDayName } = navigationDays();
 
-  console.log(currentDayName);
-
   return (
     <header className="sticky top-0 z-30 w-full p-3 sm:px-4 bg-theme-900 bg-opacity-60 ">
       <div className="flex items-center justify-between mx-auto">
@@ -50,24 +48,16 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/prices"
-                className="px-4 py-2 font-semibold text-theme-600 rounded hover:text-theme-300 hover:underline"
-              >
-                Prices
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/about"
                 className="px-4 py-2 font-semibold text-theme-600 rounded hover:text-theme-300 hover:underline"
               >
-                About Us
+                About
               </Link>
             </li>
             <li>
               <Link
-                className="px-4 py-2 font-semibold text-theme-600 rounded hover:text-theme-300 hover:underline"
-                href="/login"
+                className="font-semibold text-theme-600 border rounded border-theme-300 py-2 px-5 hover:neon-shadow duration-1000"
+                href="/signin"
               >
                 Login
               </Link>
