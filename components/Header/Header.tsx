@@ -57,7 +57,7 @@ const Header = () => {
             <li>
               <Link
                 className="font-semibold text-theme-600 border rounded border-theme-300 py-2 px-5 hover:neon-shadow duration-1000"
-                href="/signin"
+                href="/auth/signin"
               >
                 Login
               </Link>
