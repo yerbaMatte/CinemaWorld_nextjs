@@ -49,3 +49,22 @@ export const navigationDays = () => {
 
   return { mapOfDays, currentDay, currentDayName };
 };
+
+// Cut description fn
+
+export function cutStringTo240Characters(text: string) {
+  if (text.length <= 240) {
+    return text + '.. ';
+  }
+
+  // Find the last space before the 240th character
+  let lastSpaceIndex = text.lastIndexOf(' ', 240);
+
+  // If there are no spaces before the 240th character, cut the string at the 240th character
+  if (lastSpaceIndex === -1) {
+    return text.slice(0, 240);
+  }
+
+  // Otherwise, cut the string at the last space
+  return text.slice(0, lastSpaceIndex) + '... ';
+}

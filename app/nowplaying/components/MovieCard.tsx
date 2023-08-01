@@ -2,16 +2,17 @@ import React from 'react';
 import Image from 'next/legacy/image';
 import { IMAGE_BASE_URL, THUMB_SIZE } from '@/config';
 import Link from 'next/link';
+import { cutStringTo240Characters } from '@/utils/helpers';
 
 type PlayingMovies = {
   id: number;
-  posterPath: string | number;
+  posterPath: string;
   genres: { name: string; id: number }[];
-  title: string | number;
-  synopsis: string | number;
+  title: string;
+  synopsis: string;
   duration: number;
   rating: number;
-  start: string | number;
+  start: string;
 };
 
 function MovieCard({ details }: { details: PlayingMovies }) {
@@ -49,17 +50,19 @@ function MovieCard({ details }: { details: PlayingMovies }) {
             <span className="text-sm">{duration} min</span>
           </div>
         </div>
-        <p className="py-4 mr-32">{synopsis}</p>
-        <div className="flex justify-between items-center mb-4">
-          <span className="text-lg border rounded text-theme-400 border-theme-300 p-3 hover:neon-shadow duration-500 cursor-pointer">
-            {start}
-          </span>
+        <p className="py-4 mr-32">
+          {cutStringTo240Characters(synopsis)}
           <Link
             href={`/movies/${id}`}
-            className="text-theme-600 underline hover:text-white p-4"
+            className="text-theme-600 underline hover:text-white"
           >
             read more
           </Link>
+        </p>
+        <div className="flex justify-between items-center mb-4">
+          <span className="text-lg border rounded text-theme-400 border-theme-300 p-3 py-2 hover:neon-shadow duration-500 cursor-pointer">
+            {start}
+          </span>
         </div>
       </div>
     </div>
