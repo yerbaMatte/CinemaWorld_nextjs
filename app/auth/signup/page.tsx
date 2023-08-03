@@ -4,22 +4,23 @@ import React from 'react';
 import Image from 'next/legacy/image';
 import bgLogo from '../../../public/images/bg-login.webp';
 import signUp from '../../../firebase/auth/signup';
+// validation
+import { UserTypes } from '@/types/Auth';
+import { validationSchema } from '@/utils/validationSchema';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
 export default function SignUpPage() {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<UserTypes>({
+    resolver: yupResolver(validationSchema),
+  });
 
-  const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const { result, error } = await signUp({ email, password });
-
-    if (error) {
-      return console.log(error);
-    }
-
-    console.log(result);
-  };
+  const onSubmit = (data: UserTypes) => console.log(data);
 
   return (
     <div className="relative flex flex-col justify-center grow">
@@ -40,7 +41,7 @@ export default function SignUpPage() {
         <h1 className="text-3xl font-semibold text-center text-theme-200 uppercase">
           Sign up
         </h1>
-        <form className="mt-6" onSubmit={handleForm}>
+        <form className="mt-6" onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -51,10 +52,9 @@ export default function SignUpPage() {
             <input
               type="email"
               className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-theme-400 focus:ring-theme-300 focus:outline-none focus:ring focus:ring-opacity-40"
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-              id="email"
+              {...register('email')}
             />
+            <p className="text-red-600">{errors.email?.message}</p>
           </div>
           <div className="mb-6">
             <label
@@ -66,10 +66,11 @@ export default function SignUpPage() {
             <input
               type="password"
               className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-theme-400 focus:ring-theme-300 focus:outline-none focus:ring focus:ring-opacity-40"
-              onChange={(e) => setPassword(e.target.value)}
-              name="password"
-              id="password"
+              {...register('password')}
             />
+            <p className="text-red-600">
+              {errors.password ? errors.password.message : 'test'}
+            </p>
           </div>
           <div className="mt-8">
             <button
