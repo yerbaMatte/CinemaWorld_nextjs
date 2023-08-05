@@ -6,12 +6,15 @@ const auth = getAuth(firebase_app);
 
 export default async function signUp({ email, password }: UserTypes) {
   let result = null,
-    error = null;
+    errorSignUp = null;
   try {
     result = await createUserWithEmailAndPassword(auth, email, password);
-  } catch (e) {
-    error = e;
+  } catch (e: any) {
+    errorSignUp = e.code;
+    if (e.code === 'auth/email-already-in-use') {
+      errorSignUp = 'Email already in use';
+    }
   }
 
-  return { result, error };
+  return { result, errorSignUp };
 }
