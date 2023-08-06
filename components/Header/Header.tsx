@@ -1,8 +1,15 @@
+'use client';
+
 import Link from 'next/link';
 import { navigationDays } from '@/utils/helpers';
+import { useContext } from 'react';
+import { AppContext } from '@/context/statusContext';
 
 const Header = () => {
   const { currentDayName } = navigationDays();
+  const { state } = useContext(AppContext);
+  const userEmail = state?.email;
+  console.log(userEmail);
 
   return (
     <header className="sticky top-0 z-30 w-full p-3 sm:px-4 bg-theme-900 bg-opacity-60 ">
@@ -55,12 +62,21 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link
-                className="font-semibold text-theme-600 border rounded border-theme-300 py-2 px-5 hover:neon-shadow duration-1000"
-                href="/auth/signin"
-              >
-                Login
-              </Link>
+              {userEmail ? (
+                <Link
+                  className="font-semibold text-theme-600 border rounded border-theme-300 py-2 px-5 hover:neon-shadow duration-1000"
+                  href="/auth/signin"
+                >
+                  Log out
+                </Link>
+              ) : (
+                <Link
+                  className="font-semibold text-theme-600 border rounded border-theme-300 py-2 px-5 hover:neon-shadow duration-1000"
+                  href="/auth/signin"
+                >
+                  Login
+                </Link>
+              )}
             </li>
           </ul>
           <div className="inline-flex md:hidden">

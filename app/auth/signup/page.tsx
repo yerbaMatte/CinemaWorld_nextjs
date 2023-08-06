@@ -3,21 +3,15 @@
 import React, { useState } from 'react';
 import Image from 'next/legacy/image';
 import bgLogo from '../../../public/images/bg-login.webp';
-import signUp from '../../../firebase/auth/signup';
-import signIn from '@/firebase/auth/signin';
-import { useRouter } from 'next/navigation';
+import { signUp, signIn } from '@/firebase/auth/index';
 
 // validation
 import { UserTypes } from '@/types/Auth';
 import { validationSchema } from '@/utils/validationSchema';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 
 export default function SignUpPage() {
-  // test
-  const router = useRouter();
-
   const {
     register,
     handleSubmit,
@@ -33,7 +27,6 @@ export default function SignUpPage() {
   const onSubmit = async (userCred: UserTypes) => {
     const { errorSignUp } = await signUp(userCred);
     const { errorSignIn } = await signIn(userCred);
-    router.push('/');
 
     if (errorSignUp) {
       return setSignupErrorMessage(errorSignUp);

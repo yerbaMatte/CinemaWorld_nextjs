@@ -25,7 +25,8 @@
       "@/components/*": ["./components/*"],
       "@/utils/*": ["./utils/*"],
       "@/config/*": ["./config/*"],
-      "@/api/*": ["./api/*"]
+      "@/api/*": ["./api/*"],
+      "@/firebase/*": ["./firebase/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
