@@ -4,6 +4,7 @@ import React, { Dispatch, createContext, useReducer, useEffect } from 'react';
 import { onAuthStateChanged, getAuth } from 'firebase/auth';
 import firebase_app from '@/firebase/config';
 import { LoginStateType } from '@/types/Auth';
+import { signOut } from '@/firebase/auth';
 
 const auth = getAuth(firebase_app);
 
