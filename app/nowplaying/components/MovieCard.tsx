@@ -25,7 +25,7 @@ function MovieCard({ details }: { details: PlayingMovies }) {
           width={342}
           height={513}
           placeholder="blur"
-          blurDataURL="/images/placeholder.png"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
           src={IMAGE_BASE_URL + THUMB_SIZE + posterPath}
           alt="movie"
           priority={true}

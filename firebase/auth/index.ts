@@ -40,6 +40,9 @@ export const signIn = async ({ email, password }: UserType) => {
     console.log(result);
   } catch (e: any) {
     errorSignIn = e.code;
+    if (e.code === 'auth/user-not-found') {
+      errorSignIn = 'User not found';
+    }
   }
 
   return { result, errorSignIn };

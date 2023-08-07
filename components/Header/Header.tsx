@@ -5,11 +5,14 @@ import { navigationDays } from '@/utils/helpers';
 import { useContext } from 'react';
 import { AppContext } from '@/context/statusContext';
 import { signOut } from '@/firebase/auth';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
+  const router = useRouter();
   const { currentDayName } = navigationDays();
   const { state, dispatch } = useContext(AppContext);
   const userEmail = state?.email;
+  const isLoading = state?.isLoading;
 
   const signOutHandler = () => {
     dispatch({
@@ -19,6 +22,8 @@ const Header = () => {
       },
     });
     signOut();
+    router.push('/');
+    console.log(userEmail, isLoading);
   };
 
   return (
@@ -45,80 +50,82 @@ const Header = () => {
             </div>
           </div>
         </Link>
-        <div className="flex items-center space-x-1">
-          <ul className="hidden space-x-2 md:inline-flex">
-            <li>
-              <Link
-                href="/"
-                className="px-4 py-2 font-semibold text-theme-600 rounded hover:text-theme-300 hover:underline"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="px-4 py-2 font-semibold text-theme-600 rounded hover:text-theme-300 hover:underline"
-                href={`/nowplaying/${currentDayName}`}
-              >
-                Now playing
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="px-4 py-2 font-semibold text-theme-600 rounded hover:text-theme-300 hover:underline"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              {userEmail && (
+        {!isLoading && (
+          <div className="flex items-center space-x-1">
+            <ul className="hidden space-x-2 md:inline-flex">
+              <li>
                 <Link
-                  className="font-semibold text-theme-600 border rounded border-theme-300 py-1 px-3 hover:neon-shadow duration-1000"
-                  href="/myaccount"
-                >
-                  My Account
-                </Link>
-              )}
-            </li>
-            <li>
-              {userEmail ? (
-                <Link
-                  className="font-semibold border border-theme-300 py-1 px-3 hover:neon-shadow duration-1000 rounded bg-theme-400 text-black"
                   href="/"
-                  onClick={signOutHandler}
+                  className="px-3 py-2 font-semibold text-theme-600 rounded hover:text-theme-300 hover:underline"
                 >
-                  Log out
+                  Home
                 </Link>
-              ) : (
+              </li>
+              <li>
                 <Link
-                  className="font-semibold text-theme-600 border rounded border-theme-300 py-2 px-5 hover:neon-shadow duration-1000"
-                  href="/auth/signin"
+                  className="px-3 py-2 font-semibold text-theme-600 rounded hover:text-theme-300 hover:underline"
+                  href={`/nowplaying/${currentDayName}`}
                 >
-                  Login
+                  Now playing
                 </Link>
-              )}
-            </li>
-          </ul>
-          <div className="inline-flex md:hidden">
-            <button className="flex-none px-2 ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-            </button>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="px-3 py-2 font-semibold text-theme-600 rounded hover:text-theme-300 hover:underline"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                {userEmail && (
+                  <Link
+                    className="font-semibold text-theme-600 border rounded border-theme-300 py-1 px-3 hover:neon-shadow duration-1000"
+                    href="/myaccount"
+                  >
+                    My Account
+                  </Link>
+                )}
+              </li>
+              <li>
+                {userEmail ? (
+                  <Link
+                    className="font-semibold border border-theme-300 py-1 px-3 hover:neon-shadow duration-1000 rounded bg-theme-400 text-black"
+                    href="/"
+                    onClick={signOutHandler}
+                  >
+                    Log out
+                  </Link>
+                ) : (
+                  <Link
+                    className="font-semibold text-theme-600 border rounded border-theme-300 py-2 px-5 hover:neon-shadow duration-1000"
+                    href="/auth/signin"
+                  >
+                    Login
+                  </Link>
+                )}
+              </li>
+            </ul>
+            <div className="inline-flex md:hidden">
+              <button className="flex-none px-2 ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );

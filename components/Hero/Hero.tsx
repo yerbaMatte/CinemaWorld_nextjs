@@ -33,7 +33,7 @@ const Hero = ({
         alt={title}
         className="absolute inset-0 w-full h-full object-cover -z-10 animate-fadeIn"
         placeholder="blur"
-        blurDataURL="/public/images/placeholder.png"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
       />
 
       <div className="absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent" />

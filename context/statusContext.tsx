@@ -4,7 +4,6 @@ import React, { Dispatch, createContext, useReducer, useEffect } from 'react';
 import { onAuthStateChanged, getAuth } from 'firebase/auth';
 import firebase_app from '@/firebase/config';
 import { LoginStateType } from '@/types/Auth';
-import { signOut } from '@/firebase/auth';
 
 const auth = getAuth(firebase_app);
 
@@ -12,15 +11,16 @@ const initialState: LoginStateType = { isLoading: true, email: null };
 
 type ActionType = {
   type: string;
-  payload: {
+  payload?: Partial<{
     email: string | null;
-  };
+    isLoading: boolean;
+  }>;
 };
 
 const reducer = (state: LoginStateType, action: ActionType) => {
   switch (action.type) {
     case 'STATUS':
-      return { ...state, isLoading: !state.isLoading };
+      return { ...state, isLoading: action.payload.isLoading };
     case 'SET-USER':
       return { ...state, email: action.payload.email };
     default:
@@ -41,17 +41,18 @@ export const AuthContextProvider = ({
   useEffect(() => {
     const subscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log('User is logged in');
         dispatch({
           type: 'SET-USER',
           payload: {
             email: user?.email,
           },
         });
+        dispatch({ type: 'STATUS', payload: { isLoading: false } });
       } else {
-        console.log('There is no user');
+        dispatch({ type: 'STATUS', payload: { isLoading: false } });
       }
     });
+
     return () => subscribe();
   }, []);
 
