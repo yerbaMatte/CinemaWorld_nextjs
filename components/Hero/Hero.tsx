@@ -59,11 +59,8 @@ const Hero = ({
                 </div>
                 <Link href={`/movies/${id}`}>
                   <button className="border rounded text-theme-400 border-theme-300 py-2 px-5 hover:neon-shadow duration-500">
-                    TEST
-                  </button>
-                  {/* <button className="border rounded text-theme-400 border-theme-300 py-2 px-5 hover:neon-shadow duration-500">
                     See Details
-                  </button> */}
+                  </button>
                 </Link>
               </div>
               <p className="w-full text-gray-200 text-shadow-lg">
