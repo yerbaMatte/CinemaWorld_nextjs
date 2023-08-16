@@ -17,7 +17,7 @@ CinemaWorld is a modern web application built using Next.js that provides users 
 
 ## Tech Stack
 
-- **Next.js:**
+- **Next.js**, **App Router**
 
 - **React**, **React Context**, **React-hook-form** 
 
