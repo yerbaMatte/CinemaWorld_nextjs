@@ -30,7 +30,7 @@ async function DayListPage({
 
 export default DayListPage;
 
-export const dayPlayingMovies = async (dayId: string) => {
+const dayPlayingMovies = async (dayId: string) => {
   // get a list of playing movies at specific day
   const listOfMovies = moviesSchedule[dayId];
   // fetch movies

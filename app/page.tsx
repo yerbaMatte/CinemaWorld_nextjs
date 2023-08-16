@@ -29,7 +29,7 @@ export default async function Home() {
   );
 }
 
-export const getFeaturedMovie = async () => {
+const getFeaturedMovie = async () => {
   // Featured Movie
   const movieEndpoint: string = movieUrl('98');
   const movieResp = await basicFetch<Movie>(movieEndpoint);
@@ -46,7 +46,7 @@ export const getFeaturedMovie = async () => {
   return featuredMovie;
 };
 
-export const nowPlayingMovies = async () => {
+const nowPlayingMovies = async () => {
   // Now playing movies
   const fetchPromises = NOW_PLAYING_MOVIE_IDS.map((movie) =>
     basicFetch<Movie>(movieUrl(movie))
