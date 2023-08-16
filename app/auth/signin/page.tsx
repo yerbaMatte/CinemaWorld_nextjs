@@ -97,13 +97,12 @@ function SignInPage() {
           </div>
         </form>
         <div className="h-8 flex items-center justify-center">
-          {' '}
           {signupErrorMessage && (
             <p className="text-red-600 text-center">{signupErrorMessage}</p>
           )}
         </div>
         <p className="text-xs font-light text-center text-white">
-          Don't have an account?{' '}
+          Don&apos; have an account?
           <a
             href="/auth/signup"
             className="font-medium text-theme-100 hover:underline"
