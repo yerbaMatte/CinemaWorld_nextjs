@@ -1,4 +1,4 @@
-# CinemaWorld - Movie Information App
+# CinemaWorld - Experience the enchantment of CinemaWorld, where extraordinary movies come to life
 
 CinemaWorld is a modern web application built using Next.js that provides users with an immersive movie experience. This app leverages Next.js's built-in server-side rendering (SSR) capabilities to enhance initial page load times and improve search engine optimization (SEO). With dynamic routes for movie pages and responsive layouts using Tailwind CSS, CinemaWorld offers a seamless experience across various devices. Firebase is employed for user authentication/authorization and notification delivery, adding further functionality to the app.
 
