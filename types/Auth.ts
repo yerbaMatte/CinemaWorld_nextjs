@@ -4,6 +4,6 @@ export type UserType = {
 };
 
 export type LoginStateType = {
-  isLoading: boolean;
-  email: string | null;
+  isLoading: boolean | undefined;
+  email: string | null | undefined;
 };

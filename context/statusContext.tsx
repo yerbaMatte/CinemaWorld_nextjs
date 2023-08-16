@@ -11,13 +11,13 @@ const initialState: LoginStateType = { isLoading: true, email: null };
 
 type ActionType = {
   type: string;
-  payload?: Partial<{
+  payload: Partial<{
     email: string | null;
     isLoading: boolean;
   }>;
 };
 
-const reducer = (state: LoginStateType, action: ActionType) => {
+const reducer = (state: LoginStateType, action: ActionType): LoginStateType => {
   switch (action.type) {
     case 'STATUS':
       return { ...state, isLoading: action.payload.isLoading };
@@ -69,5 +69,3 @@ export const AuthContextProvider = ({
     </AppContext.Provider>
   );
 };
-
-//
