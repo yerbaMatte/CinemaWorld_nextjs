@@ -116,24 +116,7 @@ const Header = () => {
               </ul>
               <div className='inline-flex md:hidden'>
                 <button className='flex-none px-2' onClick={openModalHandler}>
-                  {isModalOpened ? (
-                    <>
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        strokeWidth={1.5}
-                        stroke='white'
-                        className='w-8 h-8'
-                      >
-                        <path
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                          d='M6 18L18 6M6 6l12 12'
-                        />
-                      </svg>
-                    </>
-                  ) : (
+                  {!isModalOpened && (
                     <>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
@@ -158,13 +141,15 @@ const Header = () => {
         </div>
       </header>
       {isModalOpened && (
-        <div className='fixed top-16 left-0 right-0 bottom-0 z-40 bg-gray-800 bg-opacity-95 fade-in-mobile-navbar'>
+        <div
+          className={`fixed top-16 left-0 right-0 bottom-0 z-40 bg-theme-900 bg-opacity-90 border-t-2 border-white fade-in`}
+        >
           <div className='flex flex-col h-full justify-center text-white'>
-            <ul className='text-center space-y-4'>
+            <ul className='text-center space-y-6 text-2xl'>
               <li>
                 <Link
                   href='/'
-                  className='font-semibold text-xl hover:underline'
+                  className=' hover:underline'
                   onClick={openModalHandler}
                 >
                   Home
@@ -172,7 +157,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  className='font-semibold text-xl hover:underline'
+                  className='hover:underline'
                   href={`/nowplaying/${currentDayName}`}
                   onClick={openModalHandler}
                 >
@@ -182,7 +167,7 @@ const Header = () => {
               <li>
                 <Link
                   href='/about'
-                  className='font-semibold text-xl hover:underline'
+                  className='hover:underline'
                   onClick={openModalHandler}
                 >
                   About
@@ -191,7 +176,7 @@ const Header = () => {
               <li>
                 {userEmail && (
                   <Link
-                    className='font-semibold text-xl border rounded border-white py-1 px-3 hover:neon-shadow duration-1000'
+                    className='border rounded border-white py-1 px-3 hover:neon-shadow duration-1000'
                     href='/myaccount'
                     onClick={openModalHandler}
                   >
@@ -202,7 +187,7 @@ const Header = () => {
               <li>
                 {userEmail ? (
                   <Link
-                    className='font-semibold border border-white py-1 px-3 hover:neon-shadow duration-1000 rounded bg-theme-400 text-black'
+                    className='border border-white py-1 px-3 hover:neon-shadow duration-1000 rounded bg-theme-400 text-black'
                     href='/'
                     onClick={(e) => {
                       signOutHandler();
@@ -214,7 +199,7 @@ const Header = () => {
                   </Link>
                 ) : (
                   <Link
-                    className='font-semibold text-xl border rounded border-white py-2 px-5 hover:neon-shadow duration-1000'
+                    className='font-semibold border rounded border-white py-2 px-5 hover:neon-shadow duration-1000'
                     href='/auth/signin'
                     onClick={openModalHandler}
                   >
@@ -223,6 +208,25 @@ const Header = () => {
                 )}
               </li>
             </ul>
+            <button
+              className='absolute top-0 right-0 m-4'
+              onClick={openModalHandler}
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 24 24'
+                strokeWidth={1.5}
+                stroke='white'
+                className='w-8 h-8'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  d='M6 18L18 6M6 6l12 12'
+                />
+              </svg>
+            </button>
           </div>
         </div>
       )}
