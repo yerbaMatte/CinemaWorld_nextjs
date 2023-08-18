@@ -39,6 +39,16 @@ export const navigationDays = () => {
     '0': 'sun',
   };
 
+  const fullDayNames = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+
   const mapOfDays = new Map(
     Object.entries(days).map(([key, value]) => [parseInt(key), value])
   );
@@ -47,7 +57,7 @@ export const navigationDays = () => {
 
   const currentDayName = findCurrentDayName(currentDay);
 
-  return { mapOfDays, currentDay, currentDayName };
+  return { mapOfDays, currentDay, currentDayName, fullDayNames };
 };
 
 // Cut description fn
