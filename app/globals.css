@@ -136,3 +136,18 @@
     background: rgba(0, 0, 0, 0.7);
   }
 }
+
+/* MOBILE NAVIGATION */
+
+.fade-in-mobile-navbar {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
