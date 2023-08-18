@@ -29,14 +29,14 @@ export const navigationDays = () => {
   const currentDate = new Date();
   const currentDay = currentDate.getDay();
 
-  const days = {
-    '1': 'mon',
-    '2': 'tue',
-    '3': 'wed',
-    '4': 'thu',
-    '5': 'fri',
-    '6': 'sat',
-    '0': 'sun',
+  const dayIndicies: { [key: number]: string } = {
+    1: 'mon',
+    2: 'tue',
+    3: 'wed',
+    4: 'thu',
+    5: 'fri',
+    6: 'sat',
+    0: 'sun',
   };
 
   const fullDayNames = [
@@ -50,14 +50,14 @@ export const navigationDays = () => {
   ];
 
   const mapOfDays = new Map(
-    Object.entries(days).map(([key, value]) => [parseInt(key), value])
+    Object.entries(dayIndicies).map(([key, value]) => [parseInt(key), value])
   );
 
   const findCurrentDayName = (currentDay: number) => mapOfDays.get(currentDay);
 
   const currentDayName = findCurrentDayName(currentDay);
 
-  return { mapOfDays, currentDay, currentDayName, fullDayNames };
+  return { mapOfDays, currentDay, currentDayName, fullDayNames, dayIndicies };
 };
 
 // Cut description fn
