@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <>
-      <header className='relative sticky top-0 z-30 w-full p-3 sm:px-4 bg-theme-900 bg-opacity-60 '>
+      <header className='sticky top-0 z-30 w-full p-3 sm:px-4 bg-theme-900 bg-opacity-60 '>
         <div className='flex items-center justify-between mx-auto'>
           <Link href='/'>
             <div className='flex text-2xl font-bold text-theme-300 font-serif items-center'>

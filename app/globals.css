@@ -103,7 +103,7 @@
   }
 
   .scroll-button {
-    @apply bg-white absolute top-1/2 transform -translate-y-1/2 text-3xl flex justify-center content-center px-2 py-5 bg-theme-400 opacity-60 text-black;
+    @apply absolute top-1/2 transform -translate-y-1/2 text-3xl flex justify-center content-center px-2 py-5 bg-theme-400 opacity-60 text-black;
     border: 1px rgba(0, 0, 0, 0.616) solid;
   }
 
