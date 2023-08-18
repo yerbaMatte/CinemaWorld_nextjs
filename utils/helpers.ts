@@ -62,17 +62,17 @@ export const navigationDays = () => {
 
 // Cut description fn
 
-export function cutStringTo240Characters(text: string) {
-  if (text.length <= 240) {
+export function cutStringToCharacters(text: string, length: number) {
+  if (text.length <= length) {
     return text + '.. ';
   }
 
   // Find the last space before the 240th character
-  let lastSpaceIndex = text.lastIndexOf(' ', 240);
+  let lastSpaceIndex = text.lastIndexOf(' ', length);
 
   // If there are no spaces before the 240th character, cut the string at the 240th character
   if (lastSpaceIndex === -1) {
-    return text.slice(0, 240);
+    return text.slice(0, length);
   }
 
   // Otherwise, cut the string at the last space

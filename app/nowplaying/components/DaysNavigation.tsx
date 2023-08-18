@@ -18,8 +18,6 @@ function DaysNavigation() {
     setSelectedDay(currentDay);
   }, [currentDay]);
 
-  console.log(selectedDay);
-
   const handleDayDesktop = (dayIndex: number) => {
     setSelectedDay(dayIndex);
     router.push(`/nowplaying/${dayIndicies[dayIndex]}`);
@@ -32,9 +30,9 @@ function DaysNavigation() {
   };
 
   return (
-    <div className="text-sm font-medium text-center text-gray-500 border-t border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
+    <div className='text-sm font-medium text-center text-gray-500 border-t border-b border-gray-200 dark:text-gray-400 dark:border-gray-700'>
       {/* DESKTOP DAYS NAVIGATION */}
-      <ul className="flex-wrap -mb-px hidden md:flex">
+      <ul className='flex-wrap -mb-px hidden md:flex'>
         {fullDayNames.map((day, index) => (
           <li
             key={index}
@@ -50,8 +48,8 @@ function DaysNavigation() {
       </ul>
       {/* MOBILE DAYS SELECTION */}
       <select
-        id="days"
-        className="md:hidden p-1 text-white text-lg font-medium border rounded w-full bg-transparent text-center absolute top-0 right-0 w-1/5 m-4"
+        id='days'
+        className='md:hidden p-1 text-white text-lg font-medium border rounded bg-transparent text-center absolute top-0 right-0 w-1/5 m-4'
         value={selectedDay}
         onChange={handleDayMobile}
       >
