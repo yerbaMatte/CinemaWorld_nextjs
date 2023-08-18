@@ -20,7 +20,7 @@ function MovieCard({ details }: { details: PlayingMovies }) {
     details;
   return (
     <div className="flex border rounded-lg border-theme-900 background-movie-card my-3 p-4 relative animate-fadeIn items-center">
-      <div className="flex relative w-44 mx-4 h-60 w-22">
+      <div className="flex relative mx-8 w-48 h-60">
         <Image
           fill={true}
           // width={342}
