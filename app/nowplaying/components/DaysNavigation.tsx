@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import Link from 'next/link';
 import { useState } from 'react';
 import { navigationDays } from '@/utils/helpers';
 import { useRouter } from 'next/navigation';
@@ -50,20 +49,18 @@ function DaysNavigation() {
         ))}
       </ul>
       {/* MOBILE DAYS SELECTION */}
-      <div className="md:hidden">
-        <select
-          id="days"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white p-2"
-          value={selectedDay}
-          onChange={handleDayMobile}
-        >
-          {fullDayNames.map((day, index) => (
-            <option key={index} value={index}>
-              {day}
-            </option>
-          ))}
-        </select>
-      </div>
+      <select
+        id="days"
+        className="md:hidden p-1 text-white text-lg font-medium border rounded w-full bg-transparent text-center absolute top-0 right-0 w-1/5 m-4"
+        value={selectedDay}
+        onChange={handleDayMobile}
+      >
+        {fullDayNames.map((day, index) => (
+          <option key={index} value={index}>
+            {day}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }
