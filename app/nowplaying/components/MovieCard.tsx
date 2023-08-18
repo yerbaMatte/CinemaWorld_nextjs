@@ -54,7 +54,7 @@ function MovieCard({ details }: { details: PlayingMovies }) {
           </div>
         </div>
         <p className='hidden py-2 xl:py-4 mr-32 xl:block'>
-          {cutStringToCharacters(synopsis, 240)}
+          {cutStringToCharacters(synopsis, 280)}
           <Link
             href={`/movies/${id}`}
             className='text-theme-600 underline hover:text-white'
