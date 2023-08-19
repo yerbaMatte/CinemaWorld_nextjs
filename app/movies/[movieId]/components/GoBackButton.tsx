@@ -5,7 +5,7 @@ function GoBackButton() {
   return (
     <Link href='/' className='animate-fadeIn'>
       <div className='fixed bottom-1/2 left-0 translate-y-1/2 bg-theme-600 rounded-tr-3xl rounded-br-3xl opacity-50 hover:opacity-90 duration-500'>
-        <div className='flex py-16 text-black font-semibold justify-center items-center'>
+        <div className='flex py-8 sm:py-12 md:py-16 text-black font-semibold justify-center items-center'>
           {/* <span className='font-medium p-2'>MAIN PAGE</span> */}
           <svg
             xmlns='http://www.w3.org/2000/svg'
