@@ -79,29 +79,31 @@ function MovieCard({ details }: { details: PlayingMovies }) {
         </div>
       </div>
       {/* MOBILE MovieCard */}
-      <div className='flex flex-col border rounded-lg border-theme-900 background-movie-card p-3 py-6 my-3 md:p-4 relative animate-fadeIn items-center sm:hidden text-white'>
-        <h2 className='text-2xl xl:text-3xl xl:mt-2 m-2'>{title}</h2>
-        <div className='flex relative sm:mx-4 md:mx-8 w-48 h-64 shrink-0'>
+      <div className='flex flex-col background-movie-card p-3 py-6 my-3 md:p-4 relative animate-fadeIn items-center sm:hidden text-white rounded-xl'>
+        <div className='flex justify-between items-center w-full'>
+          <h2 className='text-2xl xl:text-3xl xl:mt-2'>{title}</h2>
+          <div className='text-white text-xl xl:text-3xl font-bold p-4 whitespace-nowrap'>
+            ✪ {!rating ? '0/10' : `${rating.toFixed(2)}`}
+          </div>
+        </div>
+        <div className='flex relative sm:mx-4 md:mx-8 w-64 h-96 shrink-0 border rounded-xl overflow-hidden my-4'>
           <Image
             fill={true}
+            objectFit='contain'
+            objectPosition='60% 10%'
             placeholder='blur'
             blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='
             src={IMAGE_BASE_URL + THUMB_SIZE + posterPath}
             alt='movie'
-            className='rounded-md cursor-pointer border border-theme-800'
+            className=''
           />
         </div>
         <div className='flex flex-col justify-between w-full grow'>
           <div className='flex flex-col'>
-            <div className='flex justify-between items-center'>
-              <div className='text-white text-2xl xl:text-3xl font-bold p-4 whitespace-nowrap'>
-                ✪ {!rating ? '0/10' : `${rating.toFixed(2)}`}
-              </div>
-            </div>
-            <div className='flex flex-wrap'>
+            <div className='flex flex-wrap items-center'>
               {genres.map((genre: { name: string; id: number }) => (
                 <span
-                  className='mb-2 bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300'
+                  className='m-1 bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300'
                   key={genre.id}
                 >
                   {genre.name}
@@ -118,10 +120,10 @@ function MovieCard({ details }: { details: PlayingMovies }) {
             >
               read more
             </Link>
-            <span className='border rounded p-1 lg:text-lg lg:p-3 lg:py-2 text-theme-400 border-theme-300 hover:neon-shadow duration-500 cursor-pointer m-4 block text-center'>
-              {start}
-            </span>
           </p>
+        </div>
+        <div className='border rounded p-1 lg:text-lg lg:p-3 lg:py-2 text-theme-400 border-theme-300 hover:neon-shadow duration-500 cursor-pointer m-4 text-center w-full'>
+          {start}
         </div>
       </div>
     </>
