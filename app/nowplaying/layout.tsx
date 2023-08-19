@@ -12,22 +12,20 @@ async function NowPlayingLayout({ children }: { children: React.ReactNode }) {
   const path = x.backdrop_path;
 
   return (
-    <section className='relative h-352'>
+    <section className='relative sm:h-352'>
       <Image
-        priority={true}
         objectFit='cover'
-        objectPosition='60% 70%'
+        objectPosition='40% 30%'
         layout='fill'
         src={IMAGE_BASE_URL + BACKDROP_SIZE + path}
         alt={'star wars'}
         placeholder='blur'
         blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='
       />
-
       <div className='absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent' />
       <div className='absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent' />
       <main className='w-full md:w-11/12 my-0 mx-auto p-4 py-8 z-9 relative'>
-        <h2 className='text-2xl font-semibold text-theme-400 text-shadow-md py-4 pl-5"'>
+        <h2 className='text-2xl font-semibold text-theme-400 text-shadow-md py-4 pl-5'>
           Now we are playing
         </h2>
         <DaysNavigation />
