@@ -49,7 +49,7 @@ function DaysNavigation() {
       {/* MOBILE DAYS SELECTION */}
       <select
         id='days'
-        className='md:hidden p-1 text-white text-lg font-medium border rounded bg-transparent text-center absolute top-10 right-0 w-1/4 lg:w-1/4 m-2 mr-4 shrink-0'
+        className='md:hidden p-1 text-white text-lg font-medium border rounded bg-transparent text-center absolute top-10 right-0 w-1/4 lg:w-1/4 m-2 mr-4 shrink-0 border-gray-300'
         value={selectedDay}
         onChange={handleDayMobile}
       >

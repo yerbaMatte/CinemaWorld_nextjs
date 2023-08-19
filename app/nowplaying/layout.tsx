@@ -25,7 +25,7 @@ async function NowPlayingLayout({ children }: { children: React.ReactNode }) {
       <div className='absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent' />
       <div className='absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent' />
       <main className='w-full md:w-11/12 my-0 mx-auto p-4 py-8 z-9 relative'>
-        <h2 className='text-2xl font-semibold text-theme-400 text-shadow-md py-4 pl-5'>
+        <h2 className='text-xl sm:text-2xl font-semibold text-theme-400 text-shadow-md py-4 pl-5'>
           Now we are playing
         </h2>
         <DaysNavigation />
