@@ -123,7 +123,7 @@ function MovieCard({ details }: { details: PlayingMovies }) {
           </p>
         </div>
         <div className='border-t p-1 text-theme-100 border-gray-600 hover:neon-shadow duration-500 cursor-pointer text-center w-full'>
-          {start}
+          BOOK NOW FOR <span className='font-extrabold'>{start}</span>
         </div>
       </div>
     </>
