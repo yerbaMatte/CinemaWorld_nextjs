@@ -79,12 +79,9 @@ function MovieCard({ details }: { details: PlayingMovies }) {
         </div>
       </div>
       {/* MOBILE MovieCard */}
-      <div className='flex flex-col background-movie-card relative animate-fadeIn items-center sm:hidden text-white rounded-xl border my-4 border-gray-600'>
-        <div className='flex justify-center w-full border-t border-l border-r rounded-t-lg p-4 gradient-bg border-gray-600'>
-          <h2 className='text-xl md:text-2xl text-center'>{title}</h2>
-          {/* <div className='text-white text-xl xl:text-3xl font-bold p-4 whitespace-nowrap'>
-            ✪ {!rating ? '0/10' : `${rating.toFixed(2)}`}
-          </div> */}
+      <div className='flex flex-col background-movie-card relative animate-fadeIn items-center sm:hidden text-white rounded-xl border my-4 border-gray-700'>
+        <div className='flex justify-center w-full rounded-t-lg p-4 gradient-bg border-gray-600 border-t-gray-200'>
+          <h2 className='text-xl md:text-2xl text-center '>{title}</h2>
         </div>
         <div className='flex relative sm:mx-4 md:mx-8 w-64 h-96 shrink-0 rounded-xl overflow-hidden'>
           <Image
@@ -97,6 +94,9 @@ function MovieCard({ details }: { details: PlayingMovies }) {
             alt='movie'
             className=''
           />
+          <div className='bg-theme-900 rotate-45 text-white text-xl xl:text-3xl font-bold whitespace-nowrap absolute top-2 right-0 translate-x-12 py-2 px-12 border'>
+            ✪ {!rating ? '0/10' : `${rating.toFixed(2)}`}
+          </div>
         </div>
         <div className='flex flex-col justify-between w-full grow p-4'>
           <div className='flex flex-col'>
@@ -122,7 +122,7 @@ function MovieCard({ details }: { details: PlayingMovies }) {
             </Link>
           </p>
         </div>
-        <div className='border-t p-1 text-theme-400 border-gray-500 hover:neon-shadow duration-500 cursor-pointer text-center w-full'>
+        <div className='border-t p-1 text-theme-100 border-gray-600 hover:neon-shadow duration-500 cursor-pointer text-center w-full'>
           {start}
         </div>
       </div>
