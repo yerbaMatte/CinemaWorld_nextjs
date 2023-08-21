@@ -26,12 +26,12 @@ function AboutPage() {
       <div className='absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent' />
       <div className='absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent' />
       {/* GRID */}
-      <div className='p-8 grid grid-cols-7 gap-3 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2'>
-        <h1 className='text-3xl font-semibold mb-4 col-span-7 bg-black-shadow text-theme-100 text-center py-12 px-32 rounded-3xl'>
+      <div className='grid grid-cols-7 gap-3 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2'>
+        <h1 className='text-3xl font-semibold mb-4 col-span-7 bg-black-shadow text-theme-100 py-12 px-32 rounded-3xl whitespace-nowrap'>
           Cinema World - Project Description
         </h1>
         <div className='flex flex-col items-center justify-center col-span-1 bg-black-shadow rounded-3xl p-6'>
-          <h2 className='text-2xl p-2 border-b'>Stack</h2>
+          <h2 className='text-xl p-2 border-b'>Stack</h2>
           <div className='h-16 w-16 my-2 bg-white rounded-full'>
             <Image src={nextIcon} alt='react icon' />
           </div>
@@ -48,18 +48,22 @@ function AboutPage() {
             <Image src={tailwindIcon} alt='react icon' />
           </div>
         </div>
-        <div className='col-span-3 bg-black-shadow rounded-3xl p-6'>
-          <h2 className='text-center text-2xl p-2 border-b'>Description</h2>
-          <ul className='list-disc'>
+        <div className='col-span-3 bg-black-shadow rounded-3xl p-6 '>
+          <h2 className='text-center text-xl p-2 border-b'>Description</h2>
+          <ul className='list-disc pl-6 pt-3'>
             <li>Server-side rendering</li>
             <li>Dynamic pages</li>
             <li>Firebase Integration</li>
             <li>Tailwind CSS RWD</li>
             <li>SEO support</li>
+            <li>React hook form</li>
+            <li>Yup</li>
+            <li>TMDB Data API</li>
+            <li>React Context</li>
           </ul>
         </div>
         <div className='col-span-3 bg-black-shadow rounded-3xl p-6'>
-          <h2 className='text-center text-2xl p-2 border-b'>On the way </h2>
+          <h2 className='text-center text-xl p-2 border-b'>On the way </h2>
         </div>
       </div>
     </div>
