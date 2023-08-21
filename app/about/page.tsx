@@ -31,28 +31,35 @@ function AboutPage() {
           Cinema World - Project Description
         </h1>
         <div className='flex flex-col items-center justify-center col-span-1 bg-black-shadow rounded-3xl p-6'>
-          <h2 className='text-2xl p-2'>Stack</h2>
-          <div className='h-16 w-16 m-2'>
-            <Image src={reactIcon} alt='react icon' />
-          </div>
-          <div className='h-16 w-16 m-2 bg-white rounded-full'>
+          <h2 className='text-2xl p-2 border-b'>Stack</h2>
+          <div className='h-16 w-16 my-2 bg-white rounded-full'>
             <Image src={nextIcon} alt='react icon' />
           </div>
-          <div className='h-16 w-16 m-2'>
+          <div className='h-16 w-16 my-2'>
+            <Image src={reactIcon} alt='react icon' />
+          </div>
+          <div className='h-16 w-16 my-2'>
             <Image src={typescriptIcon} alt='react icon' />
           </div>
-          <div className='h-16 w-16 m-2'>
-            <Image src={tailwindIcon} alt='react icon' />
-          </div>
-          <div className='h-16 w-16 m-2'>
+          <div className='h-16 w-16 my-2'>
             <Image src={firebaseIcon} alt='react icon' />
           </div>
+          <div className='h-16 w-16 my-2'>
+            <Image src={tailwindIcon} alt='react icon' />
+          </div>
         </div>
         <div className='col-span-3 bg-black-shadow rounded-3xl p-6'>
-          <h2 className='text-center text-2xl p-2'>Description</h2>
+          <h2 className='text-center text-2xl p-2 border-b'>Description</h2>
+          <ul className='list-disc'>
+            <li>Server-side rendering</li>
+            <li>Dynamic pages</li>
+            <li>Firebase Integration</li>
+            <li>Tailwind CSS RWD</li>
+            <li>SEO support</li>
+          </ul>
         </div>
         <div className='col-span-3 bg-black-shadow rounded-3xl p-6'>
-          <h2 className='text-center text-2xl p-2'>On the way ...</h2>
+          <h2 className='text-center text-2xl p-2 border-b'>On the way </h2>
         </div>
       </div>
     </div>
