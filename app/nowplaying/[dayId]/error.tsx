@@ -18,7 +18,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className='background-movie-card rounded-3xl w-full flex flex-col justify-center items-center mt-32 py-32 sm:py-16'>
+    <div className='bg-black-shadow rounded-3xl w-full flex flex-col justify-center items-center mt-32 py-32 sm:py-16'>
       <h2 className='text-2xl sm:text-3xl text-white p-3 w-full sm:w-4/6 text-center'>
         ❌ 404 Not found - Something went wrong!
       </h2>

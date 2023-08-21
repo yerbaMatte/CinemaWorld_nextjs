@@ -111,9 +111,9 @@
     @apply opacity-100 duration-1000;
   }
 
-  /* NOW PLAYING */
+  /* BLACK BACKGROUND SHADOW */
 
-  .background-movie-card {
+  .bg-black-shadow {
     background: rgba(0, 0, 0, 0.65);
   }
 

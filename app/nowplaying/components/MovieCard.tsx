@@ -18,10 +18,11 @@ type PlayingMovies = {
 function MovieCard({ details }: { details: PlayingMovies }) {
   const { title, genres, duration, synopsis, start, posterPath, rating, id } =
     details;
+  console.log(posterPath);
   return (
     <>
       {/* DESKTOP MovieCard */}
-      <div className='hidden sm:flex border rounded-lg border-theme-900 background-movie-card py-3 my-3 md:p-4 relative animate-fadeIn items-center'>
+      <div className='hidden sm:flex border rounded-lg border-theme-900 bg-black-shadow py-3 my-3 md:p-4 relative animate-fadeIn items-center'>
         <div className='flex relative sm:mx-4 md:mx-8 w-44 h-64 shrink-0'>
           <Image
             fill={true}
@@ -79,7 +80,7 @@ function MovieCard({ details }: { details: PlayingMovies }) {
         </div>
       </div>
       {/* MOBILE MovieCard */}
-      <div className='flex flex-col background-movie-card relative animate-fadeIn items-center sm:hidden text-white rounded-xl border my-4 border-gray-700'>
+      <div className='flex flex-col bg-black-shadow relative animate-fadeIn items-center sm:hidden text-white rounded-xl border my-4 border-gray-700'>
         <div className='flex justify-center w-full rounded-t-lg p-4 gradient-bg border-gray-600 border-t-gray-200'>
           <h2 className='text-xl md:text-2xl text-center '>{title}</h2>
         </div>
