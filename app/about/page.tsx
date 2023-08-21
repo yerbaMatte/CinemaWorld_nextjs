@@ -23,15 +23,15 @@ function AboutPage() {
         blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='
       />
       {/* GRADIENT */}
-      <div className='absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent' />
-      <div className='absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent' />
+      <div className='absolute w-full h-full bg-gradient-to-t from-[#010404] via-transparent to-transparent -z-10' />
+      <div className='absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent -z-10' />
 
       {/* GRID */}
 
-      <div className='grid grid-cols-7 gap-3 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2'>
+      <div className='grid grid-cols-7 gap-3 z-0 max-w-7xl m-auto'>
         {/* HEADER */}
 
-        <h1 className='text-3xl font-semibold mb-4 col-span-7 bg-black-shadow text-theme-100 py-12 px-32 rounded-3xl whitespace-nowrap'>
+        <h1 className='text-3xl font-semibold mb-4 col-span-7 bg-black-shadow text-theme-100 py-12 px-32 rounded-3xl whitespace-nowrap text-center'>
           Cinema World - Project Description
         </h1>
 
