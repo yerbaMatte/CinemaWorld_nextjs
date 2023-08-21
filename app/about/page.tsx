@@ -27,10 +27,9 @@ function AboutPage() {
       <div className='absolute w-full h-full bg-gradient-to-b from-[#010404] via-transparent to-transparent -z-10' />
 
       {/* GRID */}
-
       <div className='grid grid-cols-7 gap-3 z-0 max-w-7xl fade-in'>
         {/* HEADER */}
-        <h1 className='text-2xl sm:text-3xl font-semibold col-span-7 bg-black-shadow text-theme-200 py-12 px-8 sm:px-24 md:px-32 rounded-3xl text-center'>
+        <h1 className='text-2xl sm:text-3xl font-semibold col-span-7 bg-black-shadow text-theme-300 py-12 px-8 sm:px-24 md:px-32 rounded-3xl text-center'>
           Cinema World - Project Description
         </h1>
 
