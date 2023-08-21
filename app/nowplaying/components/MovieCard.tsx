@@ -25,7 +25,8 @@ function MovieCard({ details }: { details: PlayingMovies }) {
       <div className='hidden sm:flex border rounded-lg border-theme-900 bg-black-shadow py-3 my-3 md:p-4 relative animate-fadeIn items-center'>
         <div className='flex relative sm:mx-4 md:mx-8 w-44 h-64 shrink-0'>
           <Image
-            fill={true}
+            width={500}
+            height={300}
             placeholder='blur'
             blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='
             src={IMAGE_BASE_URL + THUMB_SIZE + posterPath}
@@ -86,9 +87,8 @@ function MovieCard({ details }: { details: PlayingMovies }) {
         </div>
         <div className='flex relative sm:mx-4 md:mx-8 w-64 h-96 shrink-0 rounded-xl overflow-hidden'>
           <Image
-            fill={true}
-            objectFit='contain'
-            objectPosition='60% 10%'
+            width={500}
+            height={300}
             placeholder='blur'
             blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='
             src={IMAGE_BASE_URL + THUMB_SIZE + posterPath}

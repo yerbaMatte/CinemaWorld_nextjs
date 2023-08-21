@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { IMAGE_BASE_URL, BACKDROP_SIZE, movieUrl } from '@/config';
 import { basicFetch } from '@/api/fetchFunctions';
 import { Movie } from '@/types/Movie';
@@ -14,9 +14,8 @@ async function NowPlayingLayout({ children }: { children: React.ReactNode }) {
   return (
     <section className='relative sm:h-352'>
       <Image
-        objectFit='cover'
-        objectPosition='40% 30%'
-        layout='fill'
+        fill={true}
+        className='object-cover'
         src={IMAGE_BASE_URL + BACKDROP_SIZE + path}
         alt={'star wars'}
         placeholder='blur'
