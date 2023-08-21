@@ -48,7 +48,7 @@ function AboutPage() {
             <Image src={tailwindIcon} alt='react icon' />
           </div>
         </div>
-        <div className='col-span-3 bg-black-shadow rounded-3xl p-6 '>
+        <div className='col-span-2 bg-black-shadow rounded-3xl p-6 '>
           <h2 className='text-center text-xl p-2 border-b'>Description</h2>
           <ul className='list-disc pl-6 pt-3'>
             <li>Server-side rendering</li>
@@ -60,10 +60,23 @@ function AboutPage() {
             <li>Yup</li>
             <li>TMDB Data API</li>
             <li>React Context</li>
+            <li>Authentication</li>
+            <li>Code versioning with Git</li>
+            <li>Performance optimization</li>
           </ul>
         </div>
-        <div className='col-span-3 bg-black-shadow rounded-3xl p-6'>
+        <div className='col-span-4 bg-black-shadow rounded-3xl p-6'>
           <h2 className='text-center text-xl p-2 border-b'>On the way </h2>
+          <ul className='list-disc pl-6 pt-3'>
+            <li>Firebase Firestore for storing user&apos;s booked tickets</li>
+            <li>Progressive Web App (PWA)</li>
+            <li>Designing UI for movie booking</li>
+            <li>Implementing seat selection functionality</li>
+            <li>Providing a smooth checkout process with payment options</li>
+            <li>
+              Implementing Google registration for simplified account creation
+            </li>
+          </ul>
         </div>
       </div>
     </div>
