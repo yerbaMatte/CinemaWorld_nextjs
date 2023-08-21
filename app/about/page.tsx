@@ -9,7 +9,7 @@ import React from 'react';
 
 function AboutPage() {
   return (
-    <div className='relative grow text-theme-600'>
+    <div className='relative grow text-theme-600 flex justify-center items-center'>
       {/* BG */}
       <Image
         priority={true}
@@ -28,37 +28,34 @@ function AboutPage() {
 
       {/* GRID */}
 
-      <div className='grid grid-cols-7 gap-3 z-0 max-w-7xl m-auto'>
+      <div className='grid grid-cols-7 gap-3 z-0 max-w-7xl fade-in'>
         {/* HEADER */}
-
-        <h1 className='text-3xl font-semibold mb-4 col-span-7 bg-black-shadow text-theme-100 py-12 px-32 rounded-3xl whitespace-nowrap text-center'>
+        <h1 className='text-2xl sm:text-3xl font-semibold col-span-7 bg-black-shadow text-theme-200 py-12 px-8 sm:px-24 md:px-32 rounded-3xl text-center'>
           Cinema World - Project Description
         </h1>
 
         {/* USED STACK */}
-
         <div className='flex md:flex-col items-center justify-center col-span-7 md:col-span-1 bg-black-shadow rounded-3xl p-6'>
           <h2 className='hidden text-xl p-2 border-b md:block'>Stack</h2>
-          <div className='mx-4 md:mx-0 h-16 w-16 my-2 bg-white rounded-full'>
+          <div className='relative mx-4 h-auto md:mx-0 md:w-16 my-2'>
             <Image src={nextIcon} alt='react icon' />
           </div>
-          <div className='mx-4 md:mx-0 h-16 w-16 my-2'>
+          <div className='relative mx-4 h-auto md:mx-0 md:w-16 my-2'>
             <Image src={reactIcon} alt='react icon' />
           </div>
-          <div className='mx-4 md:mx-0 h-16 w-16 my-2'>
+          <div className='relative mx-4 h-auto md:mx-0 md:w-16 my-2'>
             <Image src={typescriptIcon} alt='react icon' />
           </div>
-          <div className='mx-4 md:mx-0 h-16 w-16 my-2'>
+          <div className='relative mx-4 h-auto md:mx-0 md:w-16 my-2'>
             <Image src={firebaseIcon} alt='react icon' />
           </div>
-          <div className='mx-4 md:mx-0 h-16 w-16 my-2'>
+          <div className='relative mx-4 h-auto md:mx-0 md:w-16 my-2'>
             <Image src={tailwindIcon} alt='react icon' />
           </div>
         </div>
 
         {/* DESCRIPTION UL */}
-
-        <div className='col-span-3 md:col-span-2 bg-black-shadow rounded-3xl p-6 '>
+        <div className='col-span-7 md:col-span-2 bg-black-shadow rounded-3xl p-6 '>
           <h2 className='text-center text-xl p-2 border-b'>Description</h2>
           <ul className='list-disc pl-6 pt-3'>
             <li>Server-side rendering</li>
@@ -77,8 +74,7 @@ function AboutPage() {
         </div>
 
         {/* ON THE WAY UI */}
-
-        <div className='col-span-4 md:even:col-span-4 bg-black-shadow rounded-3xl p-6'>
+        <div className='col-span-7 md:col-span-4 bg-black-shadow rounded-3xl p-6'>
           <h2 className='text-center text-xl p-2 border-b'>On the way </h2>
           <ul className='list-disc pl-6 pt-3'>
             <li>Firebase Firestore for storing user&apos;s booked tickets</li>
