@@ -13,6 +13,9 @@ export default async function Home() {
   const featuredMovie: Featured = await getFeaturedMovie();
   const playingMovies: SelectMovie[] = await nowPlayingMovies();
 
+  console.log(featuredMovie);
+  console.log(playingMovies[0].genres);
+
   return (
     <>
       <Hero
