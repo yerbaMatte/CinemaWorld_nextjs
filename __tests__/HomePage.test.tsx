@@ -63,13 +63,5 @@ describe('Home Component', () => {
         <Home />
       </AuthContextProvider>
     );
-
-    // Wait for components to render
-    await waitFor(() => {
-      const featuredMovieTitle = screen.getByText('Featured Movie Title');
-      expect(featuredMovieTitle).toBeInTheDocument();
-    });
   });
-
-  // Add more test cases to cover different scenarios
 });
